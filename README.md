@@ -1,6 +1,6 @@
-# spring-cloud-config
+# User Service
 
-Spring Cloud User Service Example 
+Spring Cloud User Micro Service Example 
 
 ## Build
 
