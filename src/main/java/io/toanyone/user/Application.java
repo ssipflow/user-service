@@ -4,6 +4,7 @@ import io.toanyone.user.domain.User;
 import io.toanyone.user.repository.UserRepository;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -19,12 +20,8 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Autowired
-	private UserRepository repository;
-
-
 	@Bean
-	InitializingBean sendDatabase() {
+	public CommandLineRunner demo(UserRepository repository) {
 		User user = new User();
 
 		user.setSeq(1);
@@ -37,7 +34,7 @@ public class Application {
 		user.setAccountNonLocked(true);
 		user.setRoles("ROLE_USER");
 
-		return () -> {
+		return (args) -> {
 			repository.save(user);
 		};
 	}
