@@ -18,8 +18,8 @@ spec:
       hostname: user-service
       subdomain: user-service
       containers:
-      - name: user-micro-service
-        image: hubtea/user-micro-service:latest
+      - name: user-service
+        image: hubtea/user-service:latest
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: dev
