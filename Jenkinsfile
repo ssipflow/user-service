@@ -22,7 +22,7 @@ node {
     }
 
     stage('Build Docker Image') {
-        buildImage = docker.build("hubtea/user-service:${commitHash}")
+        buildImage = docker.build("ssipflow/user-service:${commitHash}")
     }
 
 

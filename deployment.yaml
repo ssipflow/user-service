@@ -46,7 +46,7 @@ spec:
       subdomain: user-service
       containers:
       - name: user-service
-        image: hubtea/user-service:latest
+        image: ssipflow/user-service:latest
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: dev
